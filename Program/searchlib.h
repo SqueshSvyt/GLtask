@@ -7,6 +7,7 @@
 #include <thread>
 #include <windows.h>
 #include <vector>
+#include <fstream>
 
 void searchFile(const std::string& fileName, const std::string& searchPath, std::string& Result_path);
 
