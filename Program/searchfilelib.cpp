@@ -24,10 +24,10 @@ bool EqualWithoutExtension(const std::string& filename1, const std::string& file
 }
 
 void searchFileDeep(const std::string& fileName, const std::string& searchPath, std::string& Result_path) {
-    for (const auto& entry : fs::recursive_directory_iterator(searchPath)) {
+    for (const auto& entry : fs::directory_iterator(searchPath)) {
         if(!Result_path.empty()) return;
 
-        if(entry.is_directory()){
+        if(entry.is_directory() && entry.exists()){
 
             try{
                 searchFileDeep(fileName, entry.path().string(), Result_path);
@@ -45,16 +45,15 @@ void searchFileDeep(const std::string& fileName, const std::string& searchPath, 
 }
 
 void searchFile(const std::string& fileName, const std::string& searchPath, std::string& Result_path){
-    //Build threads vector to control thread
+
     std::vector<std::thread> threads;
 
-    //Start Finding file
-    for (const auto& entry : fs::recursive_directory_iterator(searchPath)) {
+    for (const auto& entry : fs::directory_iterator(searchPath)) {
         if(!Result_path.empty()){
             JoinThreads(threads);
             return;
         }
-        if(entry.is_directory()){
+        if(entry.is_directory() && entry.exists()){
             try{
 
                 if(threads.size() >= MaxThreads - 1){

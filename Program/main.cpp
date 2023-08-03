@@ -3,7 +3,7 @@
 int main() {
     //Set basic configuration to a program
     SetConsoleOutputCP(CP_UTF8);
-    std::string searchPath = R"(C:\Users\olegs\Desktop\Test_directory)";
+    std::string searchPath = R"(C:\)";
 
     //Program Interface basic
     std::string fileName;
@@ -21,6 +21,7 @@ int main() {
     } else {
         std::cout << '\n' << "File '" << fileName << "' not found." << std::endl;
     }
-    
+
+    system("pause");
     return 0;
 }
