@@ -31,7 +31,7 @@ std::string GetFileNameWithoutExtension(const std::string& filename) {
 }
 
 bool EqualWithoutExtension(const std::string& filename1, const std::string& filename2) {
-    return filename1 == filename2;
+    return GetFileNameWithoutExtension(filename1) == GetFileNameWithoutExtension(filename2);
 }
 
 void searchFileDeep(const std::string& fileName, const std::string& searchPath, std::string& Result_path) {
