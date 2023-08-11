@@ -1,0 +1,2 @@
+filesystem error: directory iterator cannot open directory: Invalid argument [C:\Windows\appcompat\Backup]
+filesystem error: directory iterator cannot open directory: Invalid argument [C:\Windows\appcompat\Programs]

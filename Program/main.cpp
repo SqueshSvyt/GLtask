@@ -24,9 +24,7 @@ int main() {
                 std::cout << "Searching for file '" << fileName << "'..." << '\n';
 
                 //Searching
-                Result_path = "";
-                searchFile(fileName, searchPath, Result_path);
-
+                Result_path = searchFile(fileName, searchPath);
 
                 //Output result and end
                 if (!Result_path.empty()) {

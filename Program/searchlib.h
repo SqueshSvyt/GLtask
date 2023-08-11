@@ -9,6 +9,6 @@
 #include <vector>
 #include <fstream>
 
-void searchFile(const std::string& fileName, const std::string& searchPath, std::string& Result_path);
+std::string searchFile(const std::string& fileName, const std::string& searchPath);
 
 #endif
